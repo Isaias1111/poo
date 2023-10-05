@@ -9,6 +9,7 @@ public class Alumno{
     private String nombre;
     private  HashMap<Integer, double> calificaciones;
     private double promedio;
+    private static int cantidadAlumnos = 0;
 
     public Alumno(int numeroDeCuenta, String nombre){
 
@@ -17,6 +18,7 @@ public class Alumno{
         this.promedio = 0f;
         asignaturasCursadas = 0;
         calificaciones = new HashMap<>();
+        cantidadAlumnos++;
     }
 
     public static Alumno nuevo(Scanner sc){
@@ -27,6 +29,7 @@ public class Alumno{
         System.out.print("Introduzca nombre: ");
         nombre = sc.nextLine();
         return new Alumno(numeroDeCuenta,nombre);
+        cantidadAlumnos++;
     }
 
     public int getNumeroDeCuenta(){
